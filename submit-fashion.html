@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ثبت آگهی - مد و پوشاک - Bazaryar</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background-color: #fdfdfd;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+    }
+    header {
+      background-color: #6c3483;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header h2 {
+      margin: 5px 0 0;
+      font-size: 1.2rem;
+      color: #f5c7f7;
+    }
+    main {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    textarea {
+      min-height: 80px;
+    }
+    input[type="file"] {
+      padding: 5px 0;
+    }
+    button {
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #a569bd;
+    }
+    .preview-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .preview-images img {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Bazaryar</h1>
+  <h2>ثبت آگهی مد و پوشاک</h2>
+</header>
+
+<main>
+  <form id="fashionForm">
+    <label for="transactionType">نوع معامله</label>
+    <select id="transactionType" name="transactionType" required>
+      <option value="sell" selected>فروش</option>
+    </select>
+
+    <label for="title">عنوان آگهی</label>
+    <input type="text" id="title" name="title" placeholder="مثلاً: لباس مردانه رسمی" required />
+
+    <label for="description">توضیحات</label>
+    <textarea id="description" name="description" placeholder="اندازه، جنس، رنگ و ویژگی‌های لباس را بنویسید..." required></textarea>
+
+    <label for="price">قیمت (افغانی)</label>
+    <input type="number" id="price" name="price" placeholder="مثلاً: 1800" required />
+
+    <label for="province">ولایت</label>
+    <input type="text" id="province" name="province" placeholder="مثلاً: بلخ" required />
+
+    <label for="district">ولسوالی</label>
+    <input type="text" id="district" name="district" placeholder="مثلاً: ناحیه ۵" required />
+
+    <label for="area">منطقه</label>
+    <input type="text" id="area" name="area" placeholder="مثلاً: کارته فرنگی" required />
+
+    <label for="phone1">شماره تماس 1</label>
+    <input type="text" id="phone1" name="phone1" placeholder="مثلاً: 0700123456" required />
+
+    <label for="phone2">شماره تماس 2</label>
+    <input type="text" id="phone2" name="phone2" placeholder="مثلاً: 0790123456" required />
+
+    <label for="images">آپلود عکس‌ها (حداکثر ۵ عدد)</label>
+    <input type="file" id="images" name="images" accept="image/*" multiple required />
+
+    <div class="preview-images" id="previewImages"></div>
+
+    <button type="submit">ارسال آگهی</button>
+  </form>
+</main>
+
+<script>
+  const imagesInput = document.getElementById('images');
+  const previewContainer = document.getElementById('previewImages');
+
+  imagesInput.addEventListener('change', function () {
+    previewContainer.innerHTML = '';
+    const files = Array.from(this.files).slice(0, 5);
+
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        previewContainer.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  document.getElementById('fashionForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    alert('آگهی شما ثبت شد!\n\n' + JSON.stringify({
+      transactionType: this.transactionType.value,
+      title: this.title.value,
+      description: this.description.value,
+      price: this.price.value,
+      province: this.province.value,
+      district: this.district.value,
+      area: this.area.value,
+      phone1: this.phone1.value,
+      phone2: this.phone2.value,
+      imagesCount: this.images.files.length,
+    }, null, 2));
+  });
+</script>
+
+</body>
+</html>
