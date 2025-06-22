@@ -1,82 +1,126 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مد و پوشاک - Bazaryar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مد و پوشاک - انتخاب عملیات - Bazaryar</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
     body {
       margin: 0;
-      font-family: Tahoma, sans-serif;
-      background: linear-gradient(to bottom, #ecf0f1, #ffffff);
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #f9f5ff, #e3dbf9);
       direction: rtl;
+      color: #3c1361;
     }
     header {
-      background-color: #2c3e50;
+      background-color: #6a4c93;
       color: white;
+      padding: 25px 15px;
       text-align: center;
-      padding: 20px;
+      box-shadow: 0 4px 12px rgba(106, 76, 147, 0.5);
+      letter-spacing: 1px;
     }
     .container {
-      padding: 30px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .cards {
-      display: flex;
+      gap: 40px;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      padding: 50px 20px;
+      max-width: 960px;
+      margin: auto;
     }
     .card {
       background: white;
-      width: 260px;
-      height: 180px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      text-decoration: none;
-      color: #2c3e50;
+      border-radius: 20px;
+      width: 300px;
+      height: 220px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      transition: 0.3s;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      color: #3c1361;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
     }
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-12px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
     }
-    .card i {
-      font-size: 48px;
-      margin-bottom: 10px;
-      color: #9b59b6;
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(106,76,147,0.15), transparent 70%);
+      transform: rotate(45deg);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .card:hover::before {
+      opacity: 1;
+    }
+    .icon {
+      font-size: 60px;
+      margin-bottom: 18px;
+      color: #6a4c93;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+    }
+    .card h2 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .card p {
+      margin-top: 8px;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #6f5499;
+      line-height: 1.4;
+    }
+    @media (max-width: 650px) {
+      .container {
+        flex-direction: column;
+        padding: 30px 15px;
+      }
+      .card {
+        width: 90%;
+        height: auto;
+        padding: 25px 15px;
+      }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <header>
-    <h1>مد و پوشاک</h1>
-  </header>
+<header>
+  <h1>مد و پوشاک</h1>
+</header>
 
-  <div class="container">
-    <h2>چه کاری می‌خواهید انجام دهید؟</h2>
-    <div class="cards">
-      <a href="buy-fashion.html" class="card">
-        <i class="fas fa-tshirt"></i>
-        <h3>خرید لباس و پوشاک</h3>
-        <p>پوشاک مردانه و زنانه، کیف، کفش و موارد بیشتر</p>
-      </a>
-      <a href="sell-fashion.html" class="card">
-        <i class="fas fa-store"></i>
-        <h3>فروش لباس و پوشاک</h3>
-        <p>ثبت آگهی برای فروش لباس‌های نو و استفاده‌شده</p>
-      </a>
-    </div>
-  </div>
+<div class="container">
+  <a href="submit-fashion.html" class="card" title="ثبت آگهی">
+    <div class="icon"><i class="fas fa-pen-nib"></i></div>
+    <h2>ثبت آگهی</h2>
+    <p>ثبت آگهی فروش لباس نو و کارکرده، کفش و اکسسوری‌ها</p>
+  </a>
+
+  <a href="search-fashion.html" class="card" title="جستجو آگهی">
+    <div class="icon"><i class="fas fa-search"></i></div>
+    <h2>جستجو آگهی</h2>
+    <p>یافتن بهترین آگهی‌های مد و پوشاک در بازار</p>
+  </a>
+</div>
 
 </body>
 </html>
