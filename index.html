@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bazaryar.com | بازار آنلاین افغانستان</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      direction: rtl;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      overflow-x: auto;
+      white-space: nowrap;
+      background-color: #34495e;
+      direction: rtl;
+    }
+    nav > div {
+      display: inline-flex;
+      min-width: max-content;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      background-color: #2c3e50;
+    }
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .category {
+      position: relative;
+      padding: 20px;
+      width: 220px;
+      height: 140px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      color: white;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .category:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .category p {
+      margin: 5px 0 0 0;
+      font-weight: normal;
+      font-size: 0.9rem;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+    }
+    /* تصاویر پس‌زمینه */
+    .houses {
+      background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80');
+    }
+    .vehicles {
+      background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80');
+    }
+    .computers {
+      background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80');
+    }
+    .homeitems {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/LG_%EB%93%9C%EB%9F%BC%EC%84%B8%ED%83%81%EA%B8%B0%EC%99%80_%EC%8B%9D%EA%B8%B0%EC%84%B8%EC%B2%99%EA%B8%B0%2C_%EC%98%81%EA%B5%AD%EC%84%9C_%EB%AC%BC%EC%82%AC%EC%9A%A9_%ED%9A%A8%EC%9C%A8_%EC%B5%9C%EC%9A%B0%EC%88%98_%EC%A0%9C%ED%92%88_%EC%88%98%EC%83%81.jpg');
+    }
+    .fashion {
+      background-image: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80');
+    }
+    .jobs {
+      background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80');
+    }
+    .services {
+      background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80');
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bazaryar.com</h1>
+    <p>راهنمای حرفه‌ای خرید و فروش آنلاین در افغانستان</p>
+  </header>
+
+  <nav>
+    <div>
+      <a href="houses.html">خانه و زمین</a>
+      <a href="#vehicles">وسایط نقلیه</a>
+      <a href="#computers">کمپیوتر و موبایل</a>
+      <a href="#homeitems">وسایل منزل</a>
+      <a href="#fashion">مد و پوشاک</a>
+      <a href="#jobs">فرصت‌های شغلی</a>
+      <a href="#services">خدمات تخصصی</a>
+      <a href="#contact">ارتباط با ما</a>
+    </div>
+  </nav>
+
+  <div class="categories">
+    <div class="category houses" id="houses" title="خانه و زمین">
+      <a href="houses.html" style="color:white; text-decoration:none;">
+        خانه و زمین
+        <p>خرید، فروش یا کرایه خانه، آپارتمان و زمین در سراسر افغانستان</p>
+      </a>
+    </div>
+    <div class="category vehicles" id="vehicles" title="وسایط نقلیه">
+      وسایط نقلیه
+      <p>موتر، موترسایکل، بایسکل، وسایل نقلیه سبک و سنگین</p>
+    </div>
+    <div class="category computers" id="computers" title="کمپیوتر و موبایل">
+      کمپیوتر و موبایل
+      <p>موبایل، لپ‌تاپ، کمپیوتر، پرنتر، وسایل جانبی دیجیتال و بیشتر</p>
+    </div>
+    <div class="category homeitems" id="homeitems" title="وسایل منزل">
+      وسایل منزل
+      <p>فرنیچر، یخچال، لباس‌شویی، وسایل برقی و بیشتر</p>
+    </div>
+    <div class="category fashion" id="fashion" title="مد و پوشاک">
+      مد و پوشاک
+      <p>لباس نو و کار کرده، کفش، فیشن زنانه و مردانه</p>
+    </div>
+    <div class="category jobs" id="jobs" title="فرصت‌های شغلی">
+      فرصت‌های شغلی
+      <p>استخدام، آگهی کار، فریلنسری و شغل در افغانستان</p>
+    </div>
+    <div class="category services" id="services" title="خدمات تخصصی">
+      خدمات تخصصی
+      <p>ترمیم، ترجمه، نصب، برنامه‌نویسی، مشاوره و غیره</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Bazaryar.com - تمامی حقوق محفوظ است.
+  </footer>
+</body>
+</html>
