@@ -3,90 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>خانه و زمین - Bazaryar</title>
+  <title>خانه و زمین - انتخاب عملیات - Bazaryar</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
     body {
       margin: 0;
-      font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #ecf0f1, #ffffff);
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
       direction: rtl;
+      color: #102a43;
     }
     header {
-      background-color: #2c3e50;
+      background-color: #0b3d91;
       color: white;
-      padding: 15px;
+      padding: 25px 15px;
       text-align: center;
+      box-shadow: 0 4px 12px rgba(11, 61, 145, 0.4);
+      letter-spacing: 1px;
     }
     .container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 30px;
-    }
-    .cards {
-      display: flex;
-      gap: 30px;
+      gap: 40px;
       flex-wrap: wrap;
       justify-content: center;
+      padding: 50px 20px;
+      max-width: 960px;
+      margin: auto;
     }
     .card {
-      background: #ffffff;
-      border-radius: 15px;
-      width: 280px;
-      height: 200px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      background: white;
+      border-radius: 20px;
+      width: 300px;
+      height: 220px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       text-decoration: none;
-      color: #2c3e50;
-      transition: all 0.3s ease;
+      color: #102a43;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
     }
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      transform: translateY(-12px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
     }
-    .card i {
-      font-size: 50px;
-      margin-bottom: 15px;
-      color: #2980b9;
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(11,61,145,0.15), transparent 70%);
+      transform: rotate(45deg);
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
     }
-    @media (max-width: 600px) {
-      .cards {
+    .card:hover::before {
+      opacity: 1;
+    }
+    .icon {
+      font-size: 60px;
+      margin-bottom: 18px;
+      color: #0b3d91;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+    }
+    .card h2 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+    .card p {
+      margin-top: 8px;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #334e68;
+      line-height: 1.4;
+    }
+    @media (max-width: 650px) {
+      .container {
         flex-direction: column;
-        align-items: center;
+        padding: 30px 15px;
+      }
+      .card {
+        width: 90%;
+        height: auto;
+        padding: 25px 15px;
       }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <header>
-    <h1>خانه و زمین</h1>
-  </header>
+<header>
+  <h1>خانه و زمین</h1>
+</header>
 
-  <div class="container">
-    <h2>چه کاری می‌خواهید انجام دهید؟</h2>
-    <div class="cards">
-      <a href="buy-house.html" class="card">
-        <i class="fas fa-house-user"></i>
-        <h3>خرید خانه یا زمین</h3>
-        <p>جستجوی خانه، آپارتمان یا زمین برای خرید</p>
-      </a>
-      <a href="sell-house.html" class="card">
-        <i class="fas fa-sign"></i>
-        <h3>فروش خانه یا زمین</h3>
-        <p>ثبت آگهی فروش خانه، آپارتمان یا زمین</p>
-      </a>
-    </div>
-  </div>
+<div class="container">
+  <a href="submit-house.html" class="card" title="ثبت آگهی">
+    <div class="icon"><i class="fas fa-pencil-alt"></i></div>
+    <h2>ثبت آگهی</h2>
+    <p>ثبت آگهی فروش یا اجاره خانه، زمین و آپارتمان</p>
+  </a>
+
+  <a href="search-house.html" class="card" title="جستجو آگهی">
+    <div class="icon"><i class="fas fa-search"></i></div>
+    <h2>جستجو آگهی</h2>
+    <p>یافتن بهترین آگهی‌های خرید، فروش و اجاره</p>
+  </a>
+</div>
 
 </body>
 </html>
